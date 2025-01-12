@@ -1,5 +1,7 @@
 # Documentation : Contrôle du Dispositif de Nourrissage pour Pigeon
 
+![alt text](0.webp)
+
 Ce document décrit le fonctionnement et l'utilisation d'un programme Python pour contrôler un dispositif de nourrissage automatique pour pigeon via un Raspberry Pi. Ce dispositif comprend deux servomoteurs et une électrovanne contrôlés à distance par des requêtes HTTP.
 
 ## Matériel Requis
