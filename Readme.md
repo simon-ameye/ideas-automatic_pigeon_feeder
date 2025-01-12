@@ -12,6 +12,8 @@ Ce document décrit le fonctionnement et l'utilisation d'un programme Python pou
 - **Électrovanne** : contrôle l'arrivée d'eau.
 - Connexions aux broches GPIO du Raspberry Pi.
 
+![alt text](2.png)
+
 ## Configuration des GPIO
 Les connexions des composants au Raspberry Pi doivent être configurées comme suit :
 - Servo "flush" : Pin GPIO 17
