@@ -154,5 +154,29 @@ httpd.serve_forever()
 
 ---
 
+## Site web
+
+- Un Site web facilite les requêtes ! 
+- Le script utilise : 
+```html
+	<script>
+		function sendRequest(endpoint) {
+			fetch(`http://${window.location.hostname}:8080/${endpoint}`)
+				.then(response => {
+					if (response.ok) {
+						return response.text();
+					} else {
+						throw new Error("Erreur lors de la requête");
+					}
+				})
+				.then(data => alert(data))
+				.catch(error => alert(error));
+		}
+	</script>
+```
+
+![alt text](1.png)
+
+
 *Dédié à Charles et à son pigeon "Roucoule", source d'inspiration pour ce projet.*
 
