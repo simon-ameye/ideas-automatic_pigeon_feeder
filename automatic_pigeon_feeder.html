@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contrôle du Nourrisseur de Pigeon</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+			background-color: #f9f9f9;
+		}
+
+		header {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 0;
+			margin-bottom: 20px;
+		}
+
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 15px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin: 10px;
+			font-size: 16px;
+		}
+
+		button:hover {
+			background-color: #45a049;
+		}
+	</style>
+	<script>
+		function sendRequest(endpoint) {
+			fetch(`http://${window.location.hostname}:8080/${endpoint}`)
+				.then(response => {
+					if (response.ok) {
+						return response.text();
+					} else {
+						throw new Error("Erreur lors de la requête");
+					}
+				})
+				.then(data => alert(data))
+				.catch(error => alert(error));
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Contrôle du Nourrisseur de Pigeon</h1>
+		<p>Bienvenue dans l'interface de contrôle !</p>
+	</header>
+
+	<main>
+		<button onclick="sendRequest('flush')">Vider le verre</button><br>
+		<button onclick="sendRequest('seeds')">Déposer des graines</button><br>
+		<button onclick="sendRequest('water')">Ajouter de l'eau</button>
+	</main>
+
+	<footer>
+		<p>Dédié à Charles et son pigeon Roucoule.</p>
+	</footer>
+</body>
+
+</html>
